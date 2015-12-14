@@ -1,0 +1,40 @@
+@extends('layouts.master')
+@section('content')
+		<div>
+			<div>
+				<a href="koki/create">Tambah</a>
+			</div>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nama</th>
+						<th>Kode</th>
+						<th>Aksi</th>
+					
+					</tr>
+				</thead>
+			<tbody>
+			@foreach ($koki as $item)
+			<tr>
+				<td>
+					{{$item->id}}
+				</td>
+				<td>
+					<a href="{{url('koki/detail/'.$item->id)}}">{{ $item->nama }}</a>
+				</td>
+				<td>
+					{{$item->kode}}
+				</td>
+				<td>
+					<a href="koki/update/{{$item['id']}}">Ubah</a>
+					<a href="koki/delete/{{$item['id']}}">Hapus</a>
+				</td>
+			
+			</tr>
+			@endforeach
+		</tbody>
+	</table>
+</div>
+ @stop
+	

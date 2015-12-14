@@ -23,6 +23,10 @@ class Bahan extends Migration
             $table->integer('bahan_id');
             $table->integer('resep_id');
         });
+		Schema::create('koki_resep', function (Blueprint $table) {
+            $table->integer('bahan_id');
+            $table->integer('resep_id');
+        });
     }
     /**
      * Reverse the migrations.
